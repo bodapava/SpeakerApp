@@ -10,7 +10,7 @@ import {
   useState,
   useContext,
 } from "react";
-import { ConfigValue } from "../layout";
+import { ConfigValue } from "../App";
 
 export default function SpeakerList() {
   const [speakersdata, setSpeakersData] =
