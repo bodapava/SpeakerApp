@@ -9,14 +9,15 @@ export default function ({
   secondaryImage,
   speakeralt,
 }: any) {
-  const imageRef = useRef(null);
+  const imageRef =
+    useRef<HTMLImageElement | null>(null);
   const setISInView = function () {
     const rect =
-      imageRef.current.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.bottom <= window.innerHeight
-    );
+      imageRef.current?.getBoundingClientRect();
+    return rect
+      ? rect.top >= 0 &&
+          rect.bottom <= window.innerHeight
+      : false;
   };
   const [inView, setView] = useState(true);
   useEffect(() => {
